@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
-export const FruitContext = React.createContext('Apple');
+import Store from './Store';
 
 const Index = () => {
-  const [fruit, setFruit] = useState('Apple');
-
   return (
-      <div className="App">
-      <FruitContext.Provider value={[fruit, setFruit]}>
+    <div className="App">
+      <Store>
           <App />
-      </FruitContext.Provider>
-      </div>
+      </Store>
+    </div>
   );
 }
 

@@ -1,10 +1,10 @@
-import React, {useState, useContext} from 'react';
-import { FruitContext } from './index';
+import React, { useContext } from 'react';
+import { FruitContext } from './Store';
 import './App.css';
 
 const App = () => {
 
-  const [fruit, setFruit] = useContext(FruitContext);
+  const [fruit] = useContext(FruitContext);
 
   return (
       <header className="App-header">
