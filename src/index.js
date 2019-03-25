@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export const FruitContext = React.createContext('Apple');
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Index = () => {
+  const [fruit, setFruit] = useState('Apple');
+
+  return (
+      <div className="App">
+      <FruitContext.Provider value={[fruit, setFruit]}>
+          <App />
+      </FruitContext.Provider>
+      </div>
+  );
+}
+
+ReactDOM.render(<Index />, document.getElementById('root'));
+

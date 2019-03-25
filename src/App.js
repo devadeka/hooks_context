@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { FruitContext } from './index';
 import './App.css';
 
 const App = () => {
 
-  const [fruit, setFruit] = useState('Apple');
+  const [fruit, setFruit] = useContext(FruitContext);
 
   return (
-    <div className="App">
       <header className="App-header">
           Fruit of the day is {fruit}
       </header>
-    </div>
   );
 }
 
